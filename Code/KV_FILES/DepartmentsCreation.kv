@@ -1,0 +1,50 @@
+<DepartmentsCreation>:
+    departments_title: departments_title
+    departments_description: departments_description
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Departments Creation"
+            md_bg_color: [.8, 0, 0, .7]
+            elevation: 50
+            right_action_items: [["check-circle-outline", lambda x: root.create_department()], ["door", lambda x: root.go_back()]]
+
+        BoxLayout:
+            size_hint: 1, 1
+
+            GridLayout:
+                cols: 1
+                rows: None
+
+                Label:
+                    font_size: '30sp'
+                    size_hint: 1, 0.3
+                    text: "Title"
+                    color: 1, 0, 0, 1
+                    multiline: False
+
+                MDTextField:
+                    id: departments_title
+                    font_size: '30sp'
+                    color: 1, 0, 0, 1
+                    hint_text: "Point departments title"
+                    helper_text: "Great!"
+                    helper_text_mode: "on_focus"
+                    auto_indent: True
+                    write_tab: False
+
+                Label:
+                    font_size: '30sp'
+                    color: 1, 0, 0, 1
+                    size_hint: 1, 0.3
+                    text: "Description"
+
+                TextInput:
+                    id: departments_description
+                    font_size: '30sp'
+                    color: 1, 0, 0, 1
+                    multiline: True
+                    auto_indent: True
+                    write_tab: False

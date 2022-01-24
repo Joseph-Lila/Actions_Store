@@ -1,0 +1,92 @@
+<StartPage>:
+    on_enter:
+        app.play_music()
+
+    GridLayout:
+        cols: 4
+        rows: 3
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-24-16.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-07-04_23-25-50.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-07-58.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-08-06.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-04-28_21-48-11.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-08-27.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-08-39.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-08-43.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-08-49.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-09-09.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-09-22.jpg"
+
+        FitImage:
+            source: "Sources/Pictures/jpg/photo_2021-08-04_20-09-35.jpg"
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+
+        MDCard:
+            size_hint: 0.5, 0.334
+            md_bg_color: 10 / 255, 10 / 255, 180 / 255, 90 / 255
+            orientation: 'vertical'
+            elevation: 4
+
+            GridLayout:
+                rows: None
+                cols: 1
+                spacing: 25
+                padding: 25
+
+                Button:
+                    text: "Schedule"
+                    text_color: 0, 0, 1, 1
+                    font_size: '25sp'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgba: (.8, 0, 0, .7) if self.state=='normal' else (0, .7, .7, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [35,]
+                    on_press:
+                        app.root.current = 'schedule'
+
+                Button:
+                    text: "Departments"
+                    text_color: 0, 0, 1, 1
+                    font_size: '25sp'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgba: (.8, 0, 0, .7) if self.state=='normal' else (0, .7, .7, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [35,]
+                    on_press:
+                        app.root.current = 'departments_manager'
+

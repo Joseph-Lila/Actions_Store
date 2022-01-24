@@ -1,0 +1,24 @@
+<DepartmentsManager>:
+    departments_list: departments_list
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Departments Manager"
+            md_bg_color: [.8, 0, 0, .7]
+            elevation: 50
+            right_action_items: [["plus", lambda x: root.add_department()], ["minus", lambda x: root.remove_departments()], ["door", lambda x: root.go_back()]]
+
+        BoxLayout:
+            size_hint: 1, 1
+
+            ScrollView:
+
+                bar_color: 0, 0, 255, 1
+                bar_width: 12
+
+                MDList:
+                    id: departments_list
+
+

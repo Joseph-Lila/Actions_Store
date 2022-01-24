@@ -1,0 +1,25 @@
+<DaysConfiguration>:
+    today_list: today_list
+    days_title: days_title
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            id: days_title
+            title: "Any Day"
+            md_bg_color: [.8, 0, 0, .7]
+            elevation: 50
+            right_action_items: [["star", lambda x: root.switch_type()], ["plus", lambda x: root.add_item()], ["minus", lambda x: root.remove_item()], ["door", lambda x: root.go_back()]]
+
+        BoxLayout:
+            size_hint: 1, 1
+
+            ScrollView:
+
+                bar_color: 0, 0, 255, 1
+                bar_width: 12
+
+                MDList:
+                    id: today_list
+
